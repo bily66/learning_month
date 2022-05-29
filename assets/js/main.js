@@ -30,13 +30,15 @@ $('section.process .card-img').click(function() {
 });
 
 $('.btn-close, .black.modal-black').click(function() {
-    $('.modal-video iframe').attr('src', '');
-    $('.modal-process img').attr('src', 'https://dummyimage.com/700x470/000/fff&text=+');
-    $('.modal-process img').attr('alt', '');
-    $('.modal-process h3').text('');
-    $('.modal-process p').text('');
     $('.modal').fadeOut();
+    $('.modal-video iframe').attr('src', '');
     $('body').removeClass('opened');
     $('.black').removeClass('opened modal-black');
+    setTimeout(() => {
+        $('.modal-process img').attr('src', 'https://dummyimage.com/700x470/000/fff&text=+');
+        $('.modal-process img').attr('alt', '');
+        $('.modal-process h3').text('');
+        $('.modal-process p').text('');
+    }, 500);
 });
 
