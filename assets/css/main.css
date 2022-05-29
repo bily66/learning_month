@@ -6973,7 +6973,6 @@ header.opened .hamburger {
 
 .slick-latest .card img, .slick-required .card img, .slick-process .card img {
   width: 100%;
-  margin-bottom: 15px;
 }
 
 .slick-latest .card h3, .slick-latest .card .h3, .slick-required .card h3, .slick-required .card .h3, .slick-process .card h3, .slick-process .card .h3 {
@@ -7002,6 +7001,10 @@ header.opened .hamburger {
 
 .slick-latest .slick-slide, .slick-required .slick-slide {
   padding: 0 15px;
+}
+
+.slick-latest .card img, .slick-required .card img {
+  margin-bottom: 15px;
 }
 
 .slick-latest .card p {
@@ -7037,17 +7040,34 @@ header.opened .hamburger {
   margin-bottom: 20px;
 }
 
+.slick-process .card .card-img {
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 .slick-process .card .card-img::before {
   content: "";
   display: table;
   clear: both;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  padding-top: 67.142857142857143%;
   background-color: #000;
   opacity: 0.4;
+}
+
+.slick-process .card .card-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  transition: all 0.5s cubic-bezier(0.35, 0.7, 1, 1);
+  z-index: -1;
 }
 
 .slick-process .card .card-img h3, .slick-process .card .card-img .h3 {
@@ -7076,6 +7096,11 @@ header.opened .hamburger {
     top: 30px;
     left: 30px;
   }
+}
+
+.slick-process .card .card-img:hover img {
+  width: 110%;
+  height: 110%;
 }
 
 @media (min-width: 768px) {
