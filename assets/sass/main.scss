@@ -129,12 +129,12 @@ section {
     }
     &.about, &.behind {
         .row {
+            position: relative;
             align-items: center;
         }
         .image {
             position: relative;
             @include media-breakpoint-up(lg) {
-                margin-right: -230px;
                 width: 830px;
             }
             @include media-breakpoint-up(xl) {
@@ -168,9 +168,13 @@ section {
         .text {
             z-index: 1;
             @include media-breakpoint-up(lg) {
+                position: absolute;
+                top: 50%;
+                right: 0;
                 width: 360px;
+                transform: translateY(-50%);
             }
-            @include media-breakpoint-up(xl) {
+            @include media-breakpoint-up(xxl) {
                 width: 470px;
             }
             @include media-breakpoint-down(lg) {

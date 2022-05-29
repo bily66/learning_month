@@ -7261,6 +7261,7 @@ section.opening .h2, section.opening .h3 {
 }
 
 section.about .row, section.behind .row {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -7272,7 +7273,6 @@ section.about .image, section.behind .image {
 
 @media (min-width: 992px) {
   section.about .image, section.behind .image {
-    margin-right: -230px;
     width: 830px;
   }
 }
@@ -7328,11 +7328,16 @@ section.about .text, section.behind .text {
 
 @media (min-width: 992px) {
   section.about .text, section.behind .text {
+    position: absolute;
+    top: 50%;
+    right: 0;
     width: 360px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   section.about .text, section.behind .text {
     width: 470px;
   }
