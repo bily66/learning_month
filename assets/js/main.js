@@ -10,14 +10,6 @@ $('.black, nav a').on('click', function() {
     $('body, header, .hamburger, .black').removeClass('opened');
 });
 
-$('section.opening > .imgs').each(function() {
-    let img = {
-        width:  $(this).width(),
-        height: $(this).height(),
-    };
-    console.log(img.width, img.height);
-});
-
 $('.btn-video').click(function() {
     let videoUrl = $(this).attr('data-video');
     $('.modal-video iframe').attr('src', `${videoUrl}?rel=0&autoplay=1`);
@@ -26,8 +18,23 @@ $('.btn-video').click(function() {
     $('.black').addClass('opened modal-black');
 });
 
+$('section.process .card-img').click(function() {
+    let type = $(this).attr('data-process');
+    $('.modal-process img').attr('src', `assets/images/process-${type.toLowerCase()}.jpg`);
+    $('.modal-process img').attr('alt', process[type].title);
+    $('.modal-process h3').text(process[type].title);
+    $('.modal-process p').text(process[type].text);
+    $('.modal-process').fadeIn();
+    $('body').addClass('opened');
+    $('.black').addClass('opened modal-black');
+});
+
 $('.btn-close, .black.modal-black').click(function() {
     $('.modal-video iframe').attr('src', '');
+    $('.modal-process img').attr('src', '');
+    $('.modal-process img').attr('alt', '');
+    $('.modal-process h3').text('');
+    $('.modal-process p').text('');
     $('.modal').fadeOut();
     $('body').removeClass('opened');
     $('.black').removeClass('opened modal-black');

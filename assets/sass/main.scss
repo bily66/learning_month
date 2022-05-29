@@ -133,12 +133,12 @@ section {
         }
         .image {
             position: relative;
-            @include media-breakpoint-up(xl) {
-                width: 1040px;
-            }
             @include media-breakpoint-up(lg) {
                 margin-right: -230px;
                 width: 830px;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 1040px;
             }
             @include media-breakpoint-down(lg) {
                 margin-bottom: -40px;
@@ -167,11 +167,11 @@ section {
         }
         .text {
             z-index: 1;
-            @include media-breakpoint-up(xl) {
-                width: 470px;
-            }
             @include media-breakpoint-up(lg) {
                 width: 360px;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 470px;
             }
             @include media-breakpoint-down(lg) {
                 text-align: center;
@@ -236,10 +236,10 @@ main {
     }
 }
 
-.modal-video {
+.modal {
     .btn-close {
-        padding: ($modal-header-padding-y * .5) ($modal-header-padding-x * .5);
-        margin: 0 0 0 auto;
+        padding: 0;
+        margin: 0 -30px 20px auto;
         background-color: rgba($black, 0.9);
         border: 0;
         transition: background-color 0.3s;
@@ -254,7 +254,29 @@ main {
         }    
     }
     .modal-content {
-        background-color: transparent;
+        padding: 20px 50px 50px;
+        background-color: $black;
         border: 0;
+    }
+    &.modal-process {
+        .modal-dialog {
+            max-width: 580px;
+            color: $white;
+        }
+        img {
+            width: 100%;
+        }
+        h3 {
+            @include fs(28);
+            @include media-breakpoint-up(md) {
+                @include fs(34);
+            }
+            @include media-breakpoint-up(xl) {
+                @include fs(40);
+            }
+        }
+        p {
+            white-space: break-spaces;
+        }
     }
 }

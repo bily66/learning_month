@@ -92,7 +92,7 @@
                 </div>
                 <div class="slick-process">
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP1">
                             <div class="label">STEP1</div>
                             <img src="assets/images/process-1.jpg" alt="STEP1" class="rounded-3">
                             <h3>撼動的能耐</h3>
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP2">
                             <div class="label">STEP2</div>
                             <img src="assets/images/process-2.jpg" alt="STEP2" class="rounded-3">
                             <h3>頂尖的覺悟</h3>
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP3">
                             <div class="label">STEP3</div>
                             <img src="assets/images/process-3.jpg" alt="STEP3" class="rounded-3">
                             <h3>打磨的意志</h3>
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP4">
                             <div class="label">STEP4</div>
                             <img src="assets/images/process-4.jpg" alt="STEP4" class="rounded-3">
                             <h3>細節的堅持</h3>
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP5">
                             <div class="label">STEP5</div>
                             <img src="assets/images/process-5.jpg" alt="STEP5" class="rounded-3">
                             <h3>精緻的追求</h3>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP6">
                             <div class="label">STEP6</div>
                             <img src="assets/images/process-6.jpg" alt="STEP6" class="rounded-3">
                             <h3>屏息的投入</h3>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP7">
                             <div class="label">STEP7</div>
                             <img src="assets/images/process-7.jpg" alt="STEP7" class="rounded-3">
                             <h3>恆久的熱情</h3>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-img">
+                        <div class="card-img" data-process="STEP8">
                             <div class="label">STEP8</div>
                             <img src="assets/images/process-8.jpg" alt="STEP8" class="rounded-3">
                             <h3>傳承的決心</h3>
@@ -393,20 +393,35 @@
             Copyright © 2022 天下學習 版權所有
         </div>
     </footer>
-    <div class="modal modal-video" tabindex="-1">
+    <div class="modal modal-process">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content rounded-3">
+                <button type="button" class="btn-close">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+                <div class="modal-body p-0">
+                    <img src="" class="rounded-3" alt="">
+                    <h3 class="my-20"></h3>
+                    <p class="mb-0"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-video">
         <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content rounded-3">
                 <button type="button" class="btn-close">
                     <span class="material-symbols-rounded">close</span>
                 </button>
                 <div class="ratio ratio-16x9">
-                    <iframe src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="" class="rounded-3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-    </div>      
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="assets/js/process.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         $('.slick-latest').slick({
