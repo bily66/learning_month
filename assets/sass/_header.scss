@@ -1,0 +1,87 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: linear-gradient(to top, rgba($black, 0) 0%,rgba($black, 1) 100%);
+    z-index: 10;
+    .container {
+        display: flex;
+        align-items: center;
+        @include media-breakpoint-down(md) {
+            padding-left: $grid-gutter-width / 4;
+        }
+    }
+    a.logo {
+        img {
+            @include media-breakpoint-up(md) {
+                height: 44px;
+            }
+            @include media-breakpoint-down(md) {
+                height: 33px;
+            }
+        }
+    }
+    nav {
+        margin-left: auto;
+        @include media-breakpoint-down(lg) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            padding-top: 100px;
+            background-color: $black;
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+        ul {
+            @include list(0, 0, none);
+            display: flex;
+            gap: 10px;
+            @include media-breakpoint-down(lg) {
+                flex-direction: column;
+            }
+            a {
+                display: block;
+                @include media-breakpoint-up(lg) {
+                    padding: 10px;
+                }
+                @include media-breakpoint-down(lg) {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+    &.opened {
+        .hamburger {
+            z-index: 1;
+        }
+        nav {
+            @include media-breakpoint-down(lg) {
+                transform: translateX(0%);
+            }
+        }
+    }
+}
+
+.black {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.5;
+    z-index: 5;
+    &.opened {
+        display: block;
+    }
+    &.modal-black {
+        opacity: 0.7;
+        z-index: 10;
+    }
+}

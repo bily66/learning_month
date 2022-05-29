@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "mixin";
+@import "bootstrap";
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: $black;
+    &.opened {
+        overflow: hidden;
+    }
+}
+
+@import "header";
+@import "hamburger";
+@import "slick";
+@import "footer";
+
+section {
+    position: relative;
+    color: $white;
+    @include media-breakpoint-up(md) {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    @include media-breakpoint-down(md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .btn {
+        min-width: 130px;
+        &.btn-outline-light {
+            display: flex;
+            align-items: center;
+            &:hover {
+                svg {
+                    path {
+                        fill: $black;
+                    }
+                }
+            }
+        }
+    }
+    .anchor {
+        position: absolute;
+        top: -110px;
+    }
+    h2 {
+        @include fs(32);
+        @include media-breakpoint-up(md) {
+            @include fs(44);
+        }
+        @include media-breakpoint-up(xl) {
+            @include fs(56);
+        }
+    }
+    &.opening {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        &::before {
+            @include clear;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(66.95% 66.95% at 49.88% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            z-index: 1;
+        }
+        > .imgs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            height: 120vh;
+            transform: skew(-30deg, 10deg);
+            animation: kvImg 200s forwards alternate linear;
+            z-index: 0;
+            img {
+                height: 100%;
+            }
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-shadow: 0 0 10px $black;
+            z-index: 2;
+        }
+        h1 {
+            @include fs(34);
+            font-weight: bold;
+            @media screen and (min-width: 360px) {
+                @include fs(40);
+            }
+            @media screen and (min-width: 390px) {
+                @include fs(42);
+            }
+            @include media-breakpoint-up(md) {
+                @include fs(82);
+            }
+        }
+        .h2, .h3 {
+            font-weight: normal;
+            @include media-breakpoint-down(md) {
+                @include fs(16);
+            }
+        }
+        .h2 {
+            @include media-breakpoint-up(md) {
+                @include fs(21);
+            }
+        }
+        .h3 {
+            @include media-breakpoint-up(md) {
+                @include fs(24);
+            }
+        }
+    }
+    &.about, &.behind {
+        .row {
+            align-items: center;
+        }
+        .image {
+            position: relative;
+            @include media-breakpoint-up(xl) {
+                width: 1040px;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-right: -230px;
+                width: 830px;
+            }
+            @include media-breakpoint-down(lg) {
+                margin-bottom: -40px;
+            }
+            &::before {
+                @include clear();
+                position: absolute;
+                @include media-breakpoint-up(lg) {
+                    top: 0;
+                    right: 0;
+                    width: 465px;
+                    height: 100%;
+                    background: linear-gradient(to right, rgba($black, 0) 0%,rgba($black, 1) 100%);
+                }
+                @include media-breakpoint-down(lg) {
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100px;
+                    background: linear-gradient(to bottom, rgba($black, 0) 0%,rgba($black, 1) 100%);
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .text {
+            z-index: 1;
+            @include media-breakpoint-up(xl) {
+                width: 470px;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 360px;
+            }
+            @include media-breakpoint-down(lg) {
+                text-align: center;
+                .btn.btn-outline-light {
+                    display: inline-flex;
+                }
+            }
+        }
+    }
+    &.activity {
+        .card {
+            display: flex;
+            flex-direction: column;
+            img {
+                margin-top: auto;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    &.process,
+    &.required {
+        overflow: hidden;
+    }
+}
+
+main {
+    @include media-breakpoint-up(md) {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    @include media-breakpoint-down(md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.card-img {
+    position: relative;
+    .label {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        min-width: 65px;
+        padding: 0 13px;
+        color: $black;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        background-color: $white;
+        border-radius: 1rem;
+    }
+}
+
+@keyframes kvImg {
+    0% {
+        margin-top: 43vh;
+        margin-left: -10vh;
+    }
+    100% {
+        margin-top: -62vh;
+        margin-left: -610vh;
+    }
+}
+
+.modal-video {
+    .btn-close {
+        padding: ($modal-header-padding-y * .5) ($modal-header-padding-x * .5);
+        margin: 0 0 0 auto;
+        background-color: rgba($black, 0.9);
+        border: 0;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: rgba($black, 1);
+        }
+        .material-symbols-rounded {
+            display: block;
+            color: $white;
+            font-size: 2.5rem;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48
+        }    
+    }
+    .modal-content {
+        background-color: transparent;
+        border: 0;
+    }
+}
