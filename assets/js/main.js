@@ -55,7 +55,7 @@ $('.btn-close, .black.modal-black').click(function() {
 
 $(window).on('scroll', function() {
     let scroll = $(window).scrollTop();
-    if ( scroll > (height - 30) ) {
+    if ( scroll > (height - 50) ) {
         $('header nav ul a').removeClass('link-light').addClass('link-dark');
         $('.hamburger span').removeClass('bg-light').addClass('bg-dark');
         if ( width < 992 ) {
