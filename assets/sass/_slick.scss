@@ -11,12 +11,12 @@
     padding: 0;
     width: 60px;
     height: 60px;
-    background-color: rgba($white, .3);
+    background-color: rgba($black, .3);
     border: 0;
     border-radius: 50%;
     transition: background-color 0.3s;
     &:hover {
-        background-color: rgba($white, .5);
+        background-color: rgba($black, .5);
     }
     &.slick-prev {
         left: 0;
@@ -50,7 +50,7 @@
             width: 8px;
             height: 8px;
             border: 0;
-            background-color: $white;
+            background-color: $black;
             border-radius: 8px;
             opacity: 0.3;
             transition: width 0.3s, opacity 0.3s;
@@ -71,6 +71,14 @@
         img {
             width: 100%;
         }
+        p {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.slick-latest, .slick-required {
+    .card {
         h3 {
             @include fs(28);
             @include media-breakpoint-up(md) {
@@ -80,8 +88,16 @@
                 @include fs(40);
             }
         }
-        p {
-            margin-bottom: 40px;
+    }
+}
+
+.slick-process {
+    .card {
+        h3 {
+            @include fs(24);
+            @include media-breakpoint-up(xl) {
+                @include fs(28);
+            }
         }
     }
 }
@@ -159,6 +175,7 @@
                 bottom: 30px;
                 left: 30px;
                 margin-bottom: 0;
+                color: $white;
                 @include media-breakpoint-up(md) {
                     bottom: 30px;
                     left: 30px;

@@ -7,7 +7,7 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
+$gray-100: #F0F0F0 !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
@@ -67,8 +67,8 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       #FDF002 !default;
-$secondary:     #009E96 !default;
+$primary:       #009E96 !default;
+$secondary:     #FDF002 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -379,6 +379,7 @@ $spacers: (
   10: $spacer * .625,
   20: $spacer * 1.25,
   30: $spacer * 1.875,
+  40: $spacer * 2.5,
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -1403,7 +1404,7 @@ $modal-inner-padding:               $spacer !default;
 
 $modal-footer-margin-between:       .5rem !default;
 
-$modal-dialog-margin:               .5rem !default;
+$modal-dialog-margin:               1rem !default;
 $modal-dialog-margin-y-sm-up:       1.75rem !default;
 
 $modal-title-line-height:           $line-height-base !default;

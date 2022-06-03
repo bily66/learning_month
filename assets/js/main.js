@@ -29,6 +29,15 @@ $('section.process .card-img').click(function() {
     $('.black').addClass('opened modal-black');
 });
 
+$('section.anniversary button').click(function() {
+    let type = $(this).attr('data-type');
+    $('.modal-anniversary h3').text(anniv[type].title);
+    $('.modal-anniversary .html').html(anniv[type].html);
+    $('.modal-anniversary').fadeIn();
+    $('body').addClass('opened');
+    $('.black').addClass('opened modal-black');
+});
+
 $('.btn-close, .black.modal-black').click(function() {
     $('.modal').fadeOut();
     $('.modal-video iframe').attr('src', '');
@@ -39,6 +48,24 @@ $('.btn-close, .black.modal-black').click(function() {
         $('.modal-process img').attr('alt', '');
         $('.modal-process h3').text('');
         $('.modal-process p').text('');
+        $('.modal-anniversary h3').text('');
+        $('.modal-anniversary .html').html('');
     }, 500);
 });
 
+$(window).on('scroll', function() {
+    let scroll = $(window).scrollTop();
+    if ( scroll > (height - 30) ) {
+        $('header nav ul a').removeClass('link-light').addClass('link-dark');
+        $('.hamburger span').removeClass('bg-light').addClass('bg-dark');
+        if ( width < 992 ) {
+            $('header nav').removeClass('bg-black').addClass('bg-light');
+        }
+    } else {
+        $('header nav ul a').removeClass('link-dark').addClass('link-light');
+        $('.hamburger span').removeClass('bg-dark').addClass('bg-light');
+        if ( width < 992 ) {
+            $('header nav').removeClass('bg-light').addClass('bg-black');
+        }
+    }
+})
