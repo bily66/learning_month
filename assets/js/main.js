@@ -29,7 +29,7 @@ $('section.process .card-img').click(function() {
     $('.black').addClass('opened modal-black');
 });
 
-$('section.anniversary button').click(function() {
+$('section.anniversary button, section.required p button').click(function() {
     let type = $(this).attr('data-type');
     $('.modal-anniversary h3').text(anniv[type].title);
     $('.modal-anniversary .html').html(anniv[type].html);
@@ -56,12 +56,14 @@ $('.btn-close, .black.modal-black').click(function() {
 $(window).on('scroll', function() {
     let scroll = $(window).scrollTop();
     if ( scroll > (height - 50) ) {
+        $('header').addClass('scroll');
         $('header nav ul a').removeClass('link-light').addClass('link-dark');
         $('.hamburger span').removeClass('bg-light').addClass('bg-dark');
         if ( width < 992 ) {
             $('header nav').removeClass('bg-black').addClass('bg-light');
         }
     } else {
+        $('header').removeClass('scroll');
         $('header nav ul a').removeClass('link-dark').addClass('link-light');
         $('.hamburger span').removeClass('bg-dark').addClass('bg-light');
         if ( width < 992 ) {

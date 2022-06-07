@@ -54,6 +54,10 @@ header {
             }
         }
     }
+    &.scroll {
+        backdrop-filter: blur(10px);
+        background-color: rgba($white, 0.5);    
+    }
     &.opened {
         .hamburger {
             z-index: 1;

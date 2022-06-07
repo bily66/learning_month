@@ -7146,6 +7146,12 @@ header nav ul a {
   }
 }
 
+header.scroll {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 header.opened .hamburger {
   z-index: 1;
 }
@@ -7453,6 +7459,10 @@ header.opened .hamburger {
     bottom: 20px;
     left: 20px;
   }
+}
+
+.slick-process .card .card-img h3 span, .slick-process .card .card-img .h3 span {
+  font-size: 1.5em;
 }
 
 @media (min-width: 768px) {
@@ -7835,6 +7845,33 @@ section.process, section.latest {
     padding-top: 80px;
     padding-bottom: 80px;
   }
+}
+
+section.required p button {
+  padding: 0;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: from-font;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section.required p button {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+section.required p button:hover {
+  color: #009E96;
 }
 
 @media (min-width: 768px) {
