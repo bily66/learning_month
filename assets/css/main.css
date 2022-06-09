@@ -7367,10 +7367,6 @@ header.opened .hamburger {
   }
 }
 
-.slick-latest .slick-list, .slick-required .slick-list {
-  margin: 0 -15px;
-}
-
 .slick-latest .slick-slide, .slick-required .slick-slide {
   padding: 0 15px;
 }
@@ -7379,28 +7375,16 @@ header.opened .hamburger {
   margin-bottom: 15px;
 }
 
+.slick-latest .slick-list {
+  margin: 0 -15px;
+}
+
 .slick-latest .card p {
   height: 3.375rem;
 }
 
 .slick-required .slick-list, .slick-process .slick-list {
   overflow: visible;
-}
-
-.slick-process .slick-list {
-  margin: 0 -20px;
-}
-
-@media (min-width: 992px) {
-  .slick-process .slick-list {
-    max-width: 1000px;
-  }
-}
-
-@media (min-width: 768px) {
-  .slick-process .slick-list {
-    max-width: 790px;
-  }
 }
 
 .slick-process .slick-slide {
