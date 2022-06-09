@@ -18,7 +18,7 @@ $('.btn-video').click(function() {
     $('.black').addClass('opened modal-black');
 });
 
-$('section.process .card-img').click(function() {
+$('section.process button').click(function() {
     let type = $(this).attr('data-process');
     $('.modal-process img').attr('src', `assets/images/process-${type.toLowerCase()}.jpg`);
     $('.modal-process img').attr('alt', process[type].title);
@@ -52,6 +52,13 @@ $('.btn-close, .black.modal-black').click(function() {
         $('.modal-anniversary .html').html('');
     }, 500);
 });
+
+$(window).on('load', function() {
+    $('.process .slick-arrow').css('top', ($('.process .card-img').height() / 2));
+    $('.latest .slick-arrow').css('top', ($('.latest .card-img').height() / 2));
+    $('.required .slick-arrow').css('top', ($('.required .card-img').height() / 2));
+});
+
 
 $(window).on('scroll', function() {
     let scroll = $(window).scrollTop();

@@ -24,8 +24,12 @@ body {
 section {
     position: relative;
     @include media-breakpoint-up(md) {
-        padding-top: 75px;
-        padding-bottom: 75px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    @include media-breakpoint-down(md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
     .btn {
         min-width: 130px;
@@ -74,12 +78,12 @@ section {
             align-items: center;
             justify-content: center;
             height: 100%;
-            text-shadow: 0 0 10px $black;
             z-index: 2;
         }
         h1 {
             @include fs(34);
             font-weight: bold;
+            text-shadow: 0 0 10px $black;
             @media screen and (min-width: 360px) {
                 @include fs(40);
             }
@@ -92,18 +96,42 @@ section {
         }
         .h2, .h3 {
             font-weight: normal;
-            @include media-breakpoint-down(md) {
-                @include fs(16);
-            }
+            text-shadow: 0 0 10px $black;
         }
         .h2 {
+            padding: 8px 15px 5px;
+            border: 1px solid $white;
             @include media-breakpoint-up(md) {
-                @include fs(21);
+                @include fs(40);
+            }
+            @include media-breakpoint-down(md) {
+                @include fs(32);
             }
         }
         .h3 {
             @include media-breakpoint-up(md) {
                 @include fs(24);
+            }
+            @include media-breakpoint-down(md) {
+                @include fs(16);
+            }
+        }
+        a.btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+            @include media-breakpoint-up(md) {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            @include media-breakpoint-down(md) {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            svg {
+                margin-top: 3px;
             }
         }
     }
@@ -114,49 +142,11 @@ section {
         }
         .image {
             position: relative;
-            @include media-breakpoint-up(lg) {
-                width: 830px;
-            }
-            @include media-breakpoint-up(xl) {
-                width: 1040px;
-            }
-            @include media-breakpoint-down(lg) {
-                margin-bottom: -40px;
-            }
-            &::before {
-                @include clear();
-                position: absolute;
-                @include media-breakpoint-up(lg) {
-                    top: 0;
-                    right: 20px;
-                    width: 465px;
-                    height: 100%;
-                    background: linear-gradient(to right, rgba($white, 0) 0%,rgba($white, 1) 100%);
-                }
-                @include media-breakpoint-down(lg) {
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100px;
-                    background: linear-gradient(to bottom, rgba($white, 0) 0%,rgba($white, 1) 100%);
-                }
-            }
             img {
                 width: 100%;
             }
         }
         .text {
-            z-index: 1;
-            @include media-breakpoint-up(lg) {
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 360px;
-                transform: translateY(-50%);
-            }
-            @include media-breakpoint-up(xxl) {
-                width: 470px;
-            }
             @include media-breakpoint-down(lg) {
                 text-align: center;
                 .btn.btn-primary {
@@ -169,60 +159,27 @@ section {
             align-items: center;
         }
     }
-    &.about {
-        @include media-breakpoint-up(md) {
-            padding-bottom: 150px;
-        }
-        @include media-breakpoint-down(md) {
-            padding-top: 60px;
-            padding-bottom: 80px;
-        }
-    }
-    &.behind {
-        @include media-breakpoint-up(md) {
-            padding-top: 150px;
-        }
-        @include media-breakpoint-down(md) {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-    }
     &.anniversary {
-        @include media-breakpoint-up(md) {
-            padding-bottom: 150px;
-        }
-        @include media-breakpoint-down(md) {
-            padding-top: 40px;
-            padding-bottom: 100px;
-        }
-        h3 {
-            @include fs(28);
-            @include media-breakpoint-up(md) {
-                @include fs(34);
-            }
-            @include media-breakpoint-up(xl) {
-                @include fs(40);
-            }
-            .material-icons-round {
-                @include fs(22);
-                @include media-breakpoint-up(md) {
-                    @include fs(26);
-                }
-                @include media-breakpoint-up(xl) {
-                    @include fs(30);
-                }
-            }
-        }
         .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
             border: 1px solid rgba($black, 0.3);
-            .h4 {
-                @include fs(22);
-            }
-            .button-group {
+            h3 {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 20px;
+                gap: 10px;
+                @include fs(28);
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;
+                }        
+                span {
+                    @include media-breakpoint-up(md) {
+                        margin-top: 3px;
+                    }
+                }
             }
         }
     }
@@ -232,15 +189,9 @@ section {
     }
     &.process,
     &.latest {
-        @include media-breakpoint-up(md) {
-            padding-top: 100px;
-            padding-bottom: 100px;
-        }
-        @include media-breakpoint-down(md) {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
         background-color: $light;
+        border: solid $gray-400;
+        border-width: 1px 0;
     }
     &.required {
         p {
@@ -259,19 +210,12 @@ section {
             }
         }
         @include media-breakpoint-up(md) {
-            padding-top: 150px;
+            padding-top: 80px;
         }
         @include media-breakpoint-down(md) {
             padding-top: 80px;
             padding-bottom: 80px;
         }
-    }
-}
-
-main {
-    @include media-breakpoint-up(md) {
-        padding-top: 75px;
-        padding-bottom: 75px;
     }
 }
 

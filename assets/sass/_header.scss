@@ -55,6 +55,8 @@ header {
         }
     }
     &.scroll {
+        padding-top: 20px;
+        padding-bottom: 20px;
         backdrop-filter: blur(10px);
         background-color: rgba($white, 0.5);    
     }
