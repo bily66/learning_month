@@ -29,15 +29,6 @@ $('section.process button').click(function() {
     $('.black').addClass('opened modal-black');
 });
 
-$('section.anniversary button, section.required p button').click(function() {
-    let type = $(this).attr('data-type');
-    $('.modal-anniversary h3').text(anniv[type].title);
-    $('.modal-anniversary .html').html(anniv[type].html);
-    $('.modal-anniversary').fadeIn();
-    $('body').addClass('opened');
-    $('.black').addClass('opened modal-black');
-});
-
 $('.btn-close, .black.modal-black').click(function() {
     $('.modal').fadeOut();
     $('.modal-video iframe').attr('src', '');
@@ -48,8 +39,6 @@ $('.btn-close, .black.modal-black').click(function() {
         $('.modal-process img').attr('alt', '');
         $('.modal-process h3').text('');
         $('.modal-process p').text('');
-        $('.modal-anniversary h3').text('');
-        $('.modal-anniversary .html').html('');
     }, 500);
 });
 
