@@ -1,0 +1,102 @@
+.tabs {
+    .tab-nav {
+        position: sticky;
+        top: 87px;
+        backdrop-filter: blur(10px);
+        background-color: rgba($white, 0.5);
+        z-index: 2;
+        @include media-breakpoint-up(md) {
+            top: 87px;
+        }
+        @include media-breakpoint-down(md) {
+            top: 73px;
+        }
+        .container {
+            @include media-breakpoint-down(md) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        ul {
+            position: relative;
+            @include list(0 auto, 0, none);
+            display: flex;
+            justify-content: center;
+            @include fs(14);
+            line-height: 1.285714285714286;
+            &::after {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                @include beforeafter('', block);
+                border-bottom: 1px solid $black;
+            }
+            li {
+                padding: 12px;
+                margin-left: -1px;
+                margin-bottom: -1px;
+                text-align: center;
+                border-radius: 10px 10px 0 0;
+                background-color: $white;
+                border: 1px solid $black;
+                cursor: pointer;
+                @include media-breakpoint-up(md) {
+                    padding: 10px 25px;
+                }
+                @include media-breakpoint-down(md) {
+                    width: calc((100% + 4px) / 4);
+                }
+                &:hover, &.active {
+                    color: $white;
+                    background-color: $primary;
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+    .tab-content {
+        .tab-pane {
+            display: none;
+            &.active {
+                display: block;
+            }
+            @include media-breakpoint-up(lg) {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            @include media-breakpoint-down(lg) {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            > .bg-light {
+                max-width: 730px;
+                margin-left: auto;
+                margin-right: auto;
+                @include media-breakpoint-up(lg) {
+                    padding: 40px 50px;
+                    margin-top: 40px;
+                    margin-bottom: 60px;
+                }
+                @include media-breakpoint-down(lg) {
+                    padding: 30px 20px;
+                    margin-top: 30px;
+                    margin-bottom: 50px;
+                }
+            }
+            > .title {
+                display: flex;
+                align-items: baseline;
+                gap: 10px;
+                b {
+                    @include fs(32);
+                }
+                a {
+                    @include fs(16);
+                    text-decoration: underline;
+                    text-underline-position: under;
+                }
+            }
+        }
+    }
+}

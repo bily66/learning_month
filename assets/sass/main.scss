@@ -20,6 +20,7 @@ body {
 @import "hamburger";
 @import "slick";
 @import "footer";
+@import "tabs";
 
 section {
     position: relative;
@@ -35,7 +36,7 @@ section {
         min-width: 130px;
     }
     .anchor {
-        position: absolute;
+        position: relative;
         top: -110px;
     }
     h2 {
@@ -135,6 +136,21 @@ section {
             }
         }
     }
+    &.behind, &.livestream, &.how, &.tabs, &.about {
+        .container {
+            max-width: 1040px;
+        }
+        hr {
+            @include media-breakpoint-up(md) {
+                margin-top: 80px;
+                margin-bottom: 80px;
+            }
+            @include media-breakpoint-down(md) {
+                margin-top: 60px;
+                margin-bottom: 60px;
+            }
+        }
+    }
     &.about, &.behind {
         .row {
             position: relative;
@@ -157,6 +173,11 @@ section {
         .btn-primary {
             display: flex;
             align-items: center;
+        }
+    }
+    &.about {
+        .row {
+            flex-direction: row-reverse;
         }
     }
     &.anniversary {
@@ -187,12 +208,6 @@ section {
     &.required {
         overflow: hidden;
     }
-    &.process,
-    &.latest {
-        background-color: $light;
-        border: solid $gray-400;
-        border-width: 1px 0;
-    }
     &.required {
         p {
             button {
@@ -215,6 +230,35 @@ section {
         @include media-breakpoint-down(md) {
             padding-top: 80px;
             padding-bottom: 80px;
+        }
+    }
+    &.how {
+        overflow: hidden;
+        .how-row {
+            > div {
+                @include media-breakpoint-up(md) {
+                    margin-top: 60px;
+                    &:first-child {
+                        margin-top: 40px;
+                    }
+                }
+            }
+            @include media-breakpoint-down(md) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .slick-slide {
+                @include media-breakpoint-down(md) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+        }
+        .h3 {
+            @include fs(40);
+        }
+        p {
+            @include fs(16);
         }
     }
 }
@@ -279,21 +323,7 @@ section {
             padding-left: 20px;
         }
     }
-    &.modal-video {
-        .modal-content {
-            padding-top: 20px;
-            padding-bottom: 50px;
-            background-color: $white;
-            border: 0;
-            @include media-breakpoint-up(md) {
-                padding-right: 50px;
-            }
-            @include media-breakpoint-down(md) {
-                padding-right: 20px;
-            }
-        }
-    }
-    &.modal-video, &.modal-process {
+    &.modal-process {
         .btn-close {
             @include media-breakpoint-up(md) {
                 margin-bottom: 20px;
@@ -303,7 +333,7 @@ section {
             }
         }
     }
-    &.modal-process, &.modal-anniversary {
+    &.modal-how, &.modal-process, &.modal-anniversary {
         .modal-dialog {
             max-width: 580px;
         }
@@ -327,6 +357,58 @@ section {
             }
             @include media-breakpoint-up(xl) {
                 @include fs(40);
+            }
+        }
+    }
+    &.modal-how {
+        .modal-content {
+            padding: 20px;
+            @include media-breakpoint-up(md) {
+                padding: 30px;
+            }
+        }
+        .btn-close {
+            position: absolute;
+            @include media-breakpoint-up(md) {
+                top: 25px;
+                right: 30px;
+            }
+            @include media-breakpoint-down(md) {
+                top: 15px;
+                right: -5px;
+            }
+        }
+        .head {
+            display: flex;
+            align-items: flex-start;
+            img {
+                width: 80px
+            }
+            .name-title {
+                width: calc(100% - 80px);
+                padding-left: 10px;
+            }
+            .name {
+                @include fs(28);
+            }
+            .title {
+                @include fs(18);
+            }
+        }
+        .texts {
+            @include fs(16);
+            white-space: pre-line;
+        }
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0 30px;
+            padding-top: 20px;
+            a.btn {
+                margin-top: 10px;
+                min-width: 130px;
             }
         }
     }

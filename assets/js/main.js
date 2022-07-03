@@ -10,10 +10,18 @@ $('.black, nav a').on('click', function() {
     $('body, header, .hamburger, .black').removeClass('opened');
 });
 
-$('.btn-video').click(function() {
-    let videoUrl = $(this).attr('data-video');
-    $('.modal-video iframe').attr('src', `${videoUrl}?rel=0&autoplay=1`);
-    $('.modal-video').fadeIn();
+$('.btn-how').click(function() {
+    let type = $(this).attr('data-type');
+    let btns = `<a href="${how[type].link[0]}" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">精選課程</a>
+        <a href="${how[type].link[1]}" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">領取課程</a>`;
+    $('.modal-how .head img').attr('src', `assets/images/how-${type}-rect.jpg`);
+    $('.modal-how .head img').attr('alt', how[type].name);
+    $('.modal-how .head .name').text(how[type].name);
+    $('.modal-how .head .title').text(how[type].title);
+    $('.modal-how .texts .text-primary').text(how[type].quot);
+    $('.modal-how .texts .description').text(how[type].description);
+    $('.modal-how .btns').html(btns);
+    $('.modal-how').fadeIn();
     $('body').addClass('opened');
     $('.black').addClass('opened modal-black');
 });
@@ -31,23 +39,50 @@ $('section.process button').click(function() {
 
 $('.btn-close, .black.modal-black').click(function() {
     $('.modal').fadeOut();
-    $('.modal-video iframe').attr('src', '');
     $('body').removeClass('opened');
     $('.black').removeClass('opened modal-black');
-    setTimeout(() => {
-        $('.modal-process img').attr('src', 'https://dummyimage.com/700x470/000/fff&text=+');
-        $('.modal-process img').attr('alt', '');
-        $('.modal-process h3').text('');
-        $('.modal-process p').text('');
-    }, 500);
 });
 
-$(window).on('load', function() {
+let slickPopularArrow = 0;
+let slickTopicArrow = 0;
+let slickHowArrow = 0;
+
+function slickNav() {
     $('.process .slick-arrow').css('top', ($('.process .card-img').height() / 2));
     $('.latest .slick-arrow').css('top', ($('.latest .card-img').height() / 2));
     $('.required .slick-arrow').css('top', ($('.required .card-img').height() / 2));
+}
+
+function tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow) {
+    $('.slick-popular .slick-arrow').css('top', slickPopularArrow);
+    $('.slick-topic .slick-arrow').css('top', slickTopicArrow);
+    $('.slick-how .slick-arrow').css('top', slickHowArrow);
+}
+
+function navHeight(height) {
+    $('header nav').css('height', height);
+}
+
+$(window).on('load', function() {
+    slickNav();
+    navHeight(height);
+    slickPopularArrow = $('.slick-popular img').height() / 2;
+    slickTopicArrow = $('.slick-topic .image').height() / 2;
+    slickHowArrow = $('.slick-how .col-tang img').height() / 2;
+    tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow);
 });
 
+$(window).on('resize', function() {
+    let width  = $(window).width();
+    let height = $(window).height();
+    slickNav();
+    navHeight(height);
+    slickPopularArrow = $('.slick-popular img').height() / 2;
+    slickTopicArrow = $('.slick-topic .image').height() / 2;
+    slickHowArrow = $('.slick-how .col-tang img').height() / 2;
+    tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow);
+    $('.slick-how').slick("slickSetOption", "draggable", true, true);
+});
 
 $(window).on('scroll', function() {
     let scroll = $(window).scrollTop();
@@ -66,4 +101,15 @@ $(window).on('scroll', function() {
             $('header nav').removeClass('bg-light').addClass('bg-black');
         }
     }
+})
+
+$('.tabs .tab-nav ul li').on('click', function() {
+    let index = $(this).index();
+    $(this).addClass('active');
+    $(this).siblings('li').removeClass('active');
+    $(this).parent().parent().parent().siblings('.tab-content').children().removeClass('active');
+    $(this).parent().parent().parent().siblings('.tab-content').children().eq(index).addClass('active');
+    $('.slick-popular').slick("slickSetOption", "draggable", true, true);
+    $('.slick-topic').slick("slickSetOption", "draggable", true, true);
+    tabSlickNav(slickPopularArrow, slickTopicArrow);
 })
