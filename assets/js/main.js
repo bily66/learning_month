@@ -42,12 +42,12 @@ $('.btn-close, .black.modal-black').click(function() {
     $('body').removeClass('opened');
     $('.black').removeClass('opened modal-black');
     setTimeout(() => {
-        $('.modal-process img').attr('src', 'https://dummyimage.com/700x470/000/fff&text=+');
+        $('.modal-process img').attr('src', 'https://dummyimage.com/700x470/f0f0f0/f0f0f0');
         $('.modal-process img').attr('alt', '');
         $('.modal-process h3').text('');
         $('.modal-process p').text('');
 
-        $('.modal-how .head img').attr('src', `https://dummyimage.com/200x200/000/fff&text=+`);
+        $('.modal-how .head img').attr('src', `https://dummyimage.com/200x200/f0f0f0/f0f0f0`);
         $('.modal-how .head img').attr('alt', '');
         $('.modal-how .head .name').text('');
         $('.modal-how .head .title').text('');
