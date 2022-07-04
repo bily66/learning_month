@@ -58,21 +58,25 @@ $('.btn-close, .black.modal-black').click(function() {
     }, 500);
 });
 
-let slickPopularArrow = 0;
-let slickTopicArrow = 0;
-let slickHowArrow = 0;
+function slickNav(width) {
+    let slickProcessArrow;
+    let slickPopularArrow;
+    let slickTopicArrow;
+    let slickHowArrow;
 
-slickPopularArrow = $('.slick-popular img').height() / 2;
-slickTopicArrow = $('.slick-topic .image').height() / 2;
-slickHowArrow = $('.slick-how .col-tang img').height() / 2;
-
-function slickNav() {
-    $('.process .slick-arrow').css('top', ($('.process .card-img').height() / 2));
-    $('.latest .slick-arrow').css('top', ($('.latest .card-img').height() / 2));
-    $('.required .slick-arrow').css('top', ($('.required .card-img').height() / 2));
-}
-
-function tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow) {
+    if (width < 768) {
+        slickProcessArrow = (width - 80) * 0.671428571428571 / 2;
+        slickPopularArrow = (width - 80) * 0.666666666666667 / 2;
+        slickTopicArrow = (width - 80) / 2;
+        slickHowArrow = (width - 80) * 0.625 / 2;
+    } else {
+        slickProcessArrow = $('.slick-process .card .card-img').height() / 2;
+        slickPopularArrow = $('.slick-popular .card-item .card-image').height() / 2;
+        slickTopicArrow = $('.slick-topic .card-item .image').height() / 2;
+        slickHowArrow = $('.slick-how .col-tang img').height() / 2;
+    }
+    
+    $('.slick-process .slick-arrow').css('top', slickProcessArrow);
     $('.slick-popular .slick-arrow').css('top', slickPopularArrow);
     $('.slick-topic .slick-arrow').css('top', slickTopicArrow);
     $('.slick-how .slick-arrow').css('top', slickHowArrow);
@@ -82,28 +86,21 @@ function navHeight(height) {
     $('header nav').css('height', height);
 }
 
-slickNav();
-tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow);
+slickNav(width);
 
 $(window).on('load', function() {
-    slickNav();
     navHeight(height);
-    slickPopularArrow = $('.slick-popular img').height() / 2;
-    slickTopicArrow = $('.slick-topic .image').height() / 2;
-    slickHowArrow = $('.slick-how .col-tang img').height() / 2;
-    tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow);
+    slickNav(width);
 });
 
 $(window).on('resize', function() {
     let width  = $(window).width();
     let height = $(window).height();
-    slickNav();
-    navHeight(height);
-    slickPopularArrow = $('.slick-popular img').height() / 2;
-    slickTopicArrow = $('.slick-topic .image').height() / 2;
-    slickHowArrow = $('.slick-how .col-tang img').height() / 2;
-    tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow);
+    $('.slick-popular').slick("slickSetOption", "draggable", true, true);
+    $('.slick-topic').slick("slickSetOption", "draggable", true, true);
     $('.slick-how').slick("slickSetOption", "draggable", true, true);
+    navHeight(height);
+    slickNav(width);
 });
 
 $(window).on('scroll', function() {
