@@ -9,16 +9,16 @@ header {
     .container {
         display: flex;
         align-items: center;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
             padding-left: $grid-gutter-width / 4;
         }
     }
     a.logo {
         img {
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up(lg) {
                 height: 44px;
             }
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-down(lg) {
                 height: 33px;
             }
         }
@@ -47,10 +47,18 @@ header {
             @include media-breakpoint-down(lg) {
                 flex-direction: column;
             }
+            @include media-breakpoint-up(lg) {
+                @include media-breakpoint-down(xl) {
+                    gap: 0;
+                }
+            }
             a {
                 display: block;
                 @include media-breakpoint-up(lg) {
                     padding: 10px;
+                    @include media-breakpoint-down(xl) {
+                        @include fs(16);
+                    }
                 }
                 @include media-breakpoint-down(lg) {
                     padding: 10px 20px;

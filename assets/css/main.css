@@ -7071,19 +7071,19 @@ header .container {
           align-items: center;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   header .container {
     padding-left: 0.625rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   header a.logo img {
     height: 44px;
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   header a.logo img {
     height: 33px;
   }
@@ -7137,6 +7137,12 @@ header nav ul {
   }
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header nav ul {
+    gap: 0;
+  }
+}
+
 header nav ul a {
   display: block;
 }
@@ -7144,6 +7150,12 @@ header nav ul a {
 @media (min-width: 992px) {
   header nav ul a {
     padding: 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header nav ul a {
+    font-size: 1rem;
   }
 }
 
@@ -7598,13 +7610,19 @@ footer {
   z-index: 2;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .tabs .tab-nav {
     top: 87px;
   }
 }
 
-@media (max-width: 767.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tabs .tab-nav {
+    top: 84px;
+  }
+}
+
+@media (max-width: 991.98px) {
   .tabs .tab-nav {
     top: 73px;
   }
@@ -7918,8 +7936,10 @@ section.opening a.btn-primary svg {
   margin-top: 3px;
 }
 
-section.behind .container, section.livestream .container, section.how .container, section.tabs .container, section.about .container {
-  max-width: 1040px;
+@media (min-width: 1200px) {
+  section.behind .container, section.livestream .container, section.how .container, section.tabs .container, section.about .container {
+    max-width: 1040px;
+  }
 }
 
 @media (min-width: 768px) {

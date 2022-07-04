@@ -5,10 +5,13 @@
         backdrop-filter: blur(10px);
         background-color: rgba($white, 0.5);
         z-index: 2;
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             top: 87px;
+            @include media-breakpoint-down(xl) {
+                top: 84px;
+            }
         }
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
             top: 73px;
         }
         .container {

@@ -138,7 +138,9 @@ section {
     }
     &.behind, &.livestream, &.how, &.tabs, &.about {
         .container {
-            max-width: 1040px;
+            @include media-breakpoint-up(xl) {
+                max-width: 1040px;
+            }
         }
         hr {
             @include media-breakpoint-up(md) {
