@@ -41,6 +41,21 @@ $('.btn-close, .black.modal-black').click(function() {
     $('.modal').fadeOut();
     $('body').removeClass('opened');
     $('.black').removeClass('opened modal-black');
+    setTimeout(() => {
+        $('.modal-process img').attr('src', 'https://dummyimage.com/700x470/000/fff&text=+');
+        $('.modal-process img').attr('alt', '');
+        $('.modal-process h3').text('');
+        $('.modal-process p').text('');
+
+        $('.modal-how .head img').attr('src', `https://dummyimage.com/200x200/000/fff&text=+`);
+        $('.modal-how .head img').attr('alt', '');
+        $('.modal-how .head .name').text('');
+        $('.modal-how .head .title').text('');
+        $('.modal-how .texts .text-primary').text('');
+        $('.modal-how .texts .description').text('');
+        $('.modal-how .btns').html('');
+    
+    }, 500);
 });
 
 let slickPopularArrow = 0;
