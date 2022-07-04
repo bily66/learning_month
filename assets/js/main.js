@@ -104,6 +104,8 @@ $(window).on('resize', function() {
 });
 
 $(window).on('scroll', function() {
+    let height = $(window).height();
+    navHeight(height);
     let scroll = $(window).scrollTop();
     if ( scroll > (height - 50) ) {
         $('header').addClass('scroll');
