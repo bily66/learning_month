@@ -104,8 +104,11 @@ $(window).on('resize', function() {
 });
 
 $(window).on('scroll', function() {
+    let width  = $(window).width();
     let height = $(window).height();
     navHeight(height);
+    slickNav(width);
+
     let scroll = $(window).scrollTop();
     if ( scroll > (height - 50) ) {
         $('header').addClass('scroll');
