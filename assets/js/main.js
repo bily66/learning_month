@@ -62,6 +62,10 @@ let slickPopularArrow = 0;
 let slickTopicArrow = 0;
 let slickHowArrow = 0;
 
+slickPopularArrow = $('.slick-popular img').height() / 2;
+slickTopicArrow = $('.slick-topic .image').height() / 2;
+slickHowArrow = $('.slick-how .col-tang img').height() / 2;
+
 function slickNav() {
     $('.process .slick-arrow').css('top', ($('.process .card-img').height() / 2));
     $('.latest .slick-arrow').css('top', ($('.latest .card-img').height() / 2));
@@ -77,6 +81,9 @@ function tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow) {
 function navHeight(height) {
     $('header nav').css('height', height);
 }
+
+slickNav();
+tabSlickNav(slickPopularArrow, slickTopicArrow, slickHowArrow);
 
 $(window).on('load', function() {
     slickNav();

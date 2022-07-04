@@ -7262,6 +7262,7 @@ header.opened .hamburger {
 
 .slick-arrow {
   position: absolute;
+  top: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
