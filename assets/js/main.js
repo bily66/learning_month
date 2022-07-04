@@ -37,7 +37,7 @@ $('section.process button').click(function() {
     $('.black').addClass('opened modal-black');
 });
 
-$('.btn-close, .black.modal-black').click(function() {
+$('.btn-close, .modal-close, .black.modal-black').click(function() {
     $('.modal').fadeOut();
     $('body').removeClass('opened');
     $('.black').removeClass('opened modal-black');
@@ -129,6 +129,16 @@ $(window).on('scroll', function() {
 
 $('.tabs .tab-nav ul li').on('click', function() {
     let index = $(this).index();
+    if ( $(this).hasClass('tab-nav-disabled') ) {
+        console.log();
+        $('.modal-soon h4').text(month['week'+(index+1)].title);
+        $('.modal-soon p.description').text(month['week'+(index+1)].description);
+        $('.modal-soon p.update').text(month['week'+(index+1)].update);
+        $('.modal-soon').fadeIn();
+        $('body').addClass('opened');
+        $('.black').addClass('opened modal-black');
+        return false;
+    }
     $(this).addClass('active');
     $(this).siblings('li').removeClass('active');
     $(this).parent().parent().parent().siblings('.tab-content').children().removeClass('active');

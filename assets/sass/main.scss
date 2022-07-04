@@ -235,7 +235,6 @@ section {
         }
     }
     &.how {
-        overflow: hidden;
         .how-row {
             > div {
                 @include media-breakpoint-up(md) {
@@ -335,7 +334,7 @@ section {
             }
         }
     }
-    &.modal-how, &.modal-process, &.modal-anniversary {
+    &.modal-how, &.modal-process {
         .modal-dialog {
             max-width: 580px;
         }
@@ -360,6 +359,18 @@ section {
             @include media-breakpoint-up(xl) {
                 @include fs(40);
             }
+        }
+    }
+    &.modal-how, &.modal-soon {
+        .texts {
+            > p,  > div {
+                @include fs(16);
+                white-space: pre-line;
+            }
+        }
+        .btn {
+            margin-top: 10px;
+            min-width: 130px;
         }
     }
     &.modal-how {
@@ -397,10 +408,6 @@ section {
                 @include fs(18);
             }
         }
-        .texts {
-            @include fs(16);
-            white-space: pre-line;
-        }
         .btns {
             display: flex;
             flex-wrap: wrap;
@@ -408,10 +415,21 @@ section {
             justify-content: center;
             gap: 0 30px;
             padding-top: 20px;
-            a.btn {
-                margin-top: 10px;
-                min-width: 130px;
-            }
+        }
+    }
+    &.modal-soon {
+        .modal-content {
+            max-width: 350px;
+            padding: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-close {
+            margin-top: -5px;
+            margin-right: -5px;
+        }
+        h4 {
+            @include fs(28);
         }
     }
     &.modal-process {

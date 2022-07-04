@@ -7403,7 +7403,7 @@ header.opened .hamburger {
   height: 3.375rem;
 }
 
-.slick-required .slick-list, .slick-process .slick-list, .slick-how .slick-list {
+.slick-required .slick-list, .slick-process .slick-list {
   overflow: visible;
 }
 
@@ -8087,10 +8087,6 @@ section.required p button:hover {
   }
 }
 
-section.how {
-  overflow: hidden;
-}
-
 @media (min-width: 768px) {
   section.how .how-row > div {
     margin-top: 60px;
@@ -8219,40 +8215,50 @@ section.how p {
   }
 }
 
-.modal.modal-how .modal-dialog, .modal.modal-process .modal-dialog, .modal.modal-anniversary .modal-dialog {
+.modal.modal-how .modal-dialog, .modal.modal-process .modal-dialog {
   max-width: 580px;
 }
 
-.modal.modal-how .modal-body, .modal.modal-process .modal-body, .modal.modal-anniversary .modal-body {
+.modal.modal-how .modal-body, .modal.modal-process .modal-body {
   padding: 0 20px 0 0;
 }
 
 @media (min-width: 768px) {
-  .modal.modal-how .modal-content, .modal.modal-process .modal-content, .modal.modal-anniversary .modal-content {
+  .modal.modal-how .modal-content, .modal.modal-process .modal-content {
     padding-right: 30px;
   }
 }
 
 @media (max-width: 767.98px) {
-  .modal.modal-how .btn-close, .modal.modal-process .btn-close, .modal.modal-anniversary .btn-close {
+  .modal.modal-how .btn-close, .modal.modal-process .btn-close {
     margin-right: 20px;
   }
 }
 
-.modal.modal-how h3, .modal.modal-how .h3, .modal.modal-process h3, .modal.modal-process .h3, .modal.modal-anniversary h3, .modal.modal-anniversary .h3 {
+.modal.modal-how h3, .modal.modal-how .h3, .modal.modal-process h3, .modal.modal-process .h3 {
   font-size: 1.75rem;
 }
 
 @media (min-width: 768px) {
-  .modal.modal-how h3, .modal.modal-how .h3, .modal.modal-process h3, .modal.modal-process .h3, .modal.modal-anniversary h3, .modal.modal-anniversary .h3 {
+  .modal.modal-how h3, .modal.modal-how .h3, .modal.modal-process h3, .modal.modal-process .h3 {
     font-size: 2.125rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .modal.modal-how h3, .modal.modal-how .h3, .modal.modal-process h3, .modal.modal-process .h3, .modal.modal-anniversary h3, .modal.modal-anniversary .h3 {
+  .modal.modal-how h3, .modal.modal-how .h3, .modal.modal-process h3, .modal.modal-process .h3 {
     font-size: 2.5rem;
   }
+}
+
+.modal.modal-how .texts > p, .modal.modal-how .texts > div, .modal.modal-soon .texts > p, .modal.modal-soon .texts > div {
+  font-size: 1rem;
+  white-space: pre-line;
+}
+
+.modal.modal-how .btn, .modal.modal-soon .btn {
+  margin-top: 10px;
+  min-width: 130px;
 }
 
 .modal.modal-how .modal-content {
@@ -8309,11 +8315,6 @@ section.how p {
   font-size: 1.125rem;
 }
 
-.modal.modal-how .texts {
-  font-size: 1rem;
-  white-space: pre-line;
-}
-
 .modal.modal-how .btns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8330,9 +8331,20 @@ section.how p {
   padding-top: 20px;
 }
 
-.modal.modal-how .btns a.btn {
-  margin-top: 10px;
-  min-width: 130px;
+.modal.modal-soon .modal-content {
+  max-width: 350px;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal.modal-soon .btn-close {
+  margin-top: -5px;
+  margin-right: -5px;
+}
+
+.modal.modal-soon h4, .modal.modal-soon .h4 {
+  font-size: 1.75rem;
 }
 
 .modal.modal-process img {
