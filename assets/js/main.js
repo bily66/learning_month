@@ -138,6 +138,9 @@ $('.tabs .tab-nav ul li').on('click', function() {
         $('body').addClass('opened');
         $('.black').addClass('opened modal-black');
         return false;
+    } else {
+        let offsetTop = $(this).parent().parent().parent().parent().offset().top - $('header').height() - 30;
+        $(window).scrollTop(offsetTop);
     }
     $(this).addClass('active');
     $(this).siblings('li').removeClass('active');
@@ -145,5 +148,4 @@ $('.tabs .tab-nav ul li').on('click', function() {
     $(this).parent().parent().parent().siblings('.tab-content').children().eq(index).addClass('active');
     $('.slick-popular').slick("slickSetOption", "draggable", true, true);
     $('.slick-topic').slick("slickSetOption", "draggable", true, true);
-    tabSlickNav(slickPopularArrow, slickTopicArrow);
 })
